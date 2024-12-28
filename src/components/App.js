@@ -26,10 +26,15 @@ class App extends Component {
   }
 
   handleArrowRight(e) {
-    if (e.key === "ArrowRight") {
+    if (e.key === "ArrowRight" || e.keyCode === 39) {
       // Extract the current left position and calculate the new position
-      const currentLeft = parseInt(this.state.ballPosition.left, 10);
+      const currentLeft = parseInt(this.state.ballPosition.left);
+    //   const curr=currentLeft.slice(0,currentLeft.length-2)
+    //   console.log(curr);
+    console.log(currentLeft);
       const newLeft = currentLeft + 5;
+      console.log(newLeft);
+      
       this.setState({
         ballPosition: { left: `${newLeft}px` },
       });
